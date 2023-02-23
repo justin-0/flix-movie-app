@@ -341,3 +341,7 @@ section h2 {
 .alert-error {
   background: red;
 }
+
+.list-group span {
+  margin-right: 10px;
+}
