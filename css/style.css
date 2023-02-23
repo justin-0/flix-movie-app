@@ -345,3 +345,10 @@ section h2 {
 .list-group span {
   margin-right: 10px;
 }
+
+/* @media (max-width: 800px) {
+  #movie-details {
+    display: flex;
+    flex-direction: column;
+  }
+} */
