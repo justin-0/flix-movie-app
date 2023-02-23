@@ -55,7 +55,6 @@ async function displayMovieDetails() {
   // Split at equals sign from url to get just the ID
   const movieID = window.location.search.split('=')[1];
   const movie = await getAPIData(`/movie/${movieID}`);
-  console.log(movie);
 
   const parent = document.querySelector('#movie-details');
 
@@ -121,7 +120,6 @@ async function displayShowDetails() {
   // Split at equals sign from url to get just the ID
   const showID = window.location.search.split('=')[1];
   const show = await getAPIData(`/tv/${showID}`);
-  console.log(show);
 
   const parent = document.querySelector('#show-details');
 
@@ -236,7 +234,6 @@ async function search() {
   if (state.search.term !== '' && state.search.term != null) {
     // Display results
     const { results, total_pages, page, total_results } = await searchAPIData();
-    console.log(results);
     state.search.page = page;
     state.search.totalPages = total_pages;
     state.search.totalResults = total_results;
@@ -324,7 +321,6 @@ function displayPagination() {
 // Function to add swiper library functionality
 async function displaySlider() {
   const { results } = await getAPIData('movie/now_playing');
-  console.log(results);
   results.map((movie) => {
     const div = document.createElement('div');
     div.classList.add('swiper-slide');
@@ -376,7 +372,6 @@ function startSwiper() {
 // Display popular tv shows
 async function displayPopularShows() {
   const { results } = await getAPIData('/tv/top_rated');
-  console.log(results);
   results
     .map((show) => {
       const div = document.createElement('div');
@@ -479,22 +474,17 @@ function init() {
       break;
     case '/movie-details.html':
       displayMovieDetails();
-      console.log('Movie Details');
       break;
     case '/shows.html':
       displayPopularShows();
-      console.log('TV Shows');
       break;
     case '/tv-details.html':
       displayShowDetails();
-      console.log('TV Details');
       break;
     case '/search.html':
       search();
-      console.log('Search');
       break;
     default:
-      console.log('Not Found');
       break;
   }
   hightlightActiveLink();
