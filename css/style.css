@@ -346,9 +346,11 @@ section h2 {
   margin-right: 10px;
 }
 
-/* @media (max-width: 800px) {
-  #movie-details {
+@media (max-width: 800px) {
+  .details-top {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-} */
+}
